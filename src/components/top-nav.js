@@ -27,7 +27,7 @@ export function TopNav(props) {
         </li>
         <li>
           <a className="new" href="#" onClick={onNewGame}>
-            + New Game
+            New Game
           </a>
         </li>
       </ul>
