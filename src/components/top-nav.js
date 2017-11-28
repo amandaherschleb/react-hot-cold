@@ -5,16 +5,17 @@ import {newGame, showInfo} from '../actions';
 import './top-nav.css';
 
 export function TopNav(props) {
-  function onNewGame(e) {
-    e.preventDefault();
-    props.dispatch(newGame())
-  }
-
   function onInfo(e) {
     e.preventDefault();
     // toggle show boolean
     let show = !props.showInfoModal;
     props.dispatch(showInfo(show))
+  }
+
+  function onNewGame(e) {
+    console.log('new game clicked')
+    e.preventDefault();
+    props.dispatch(newGame())
   }
 
   return (

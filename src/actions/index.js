@@ -10,7 +10,7 @@ export const makeGuess = guess => ({
 });
 
 export const SHOW_INFO = 'SHOW_INFO';
-export const showInfo = (show) => ({
+export const showInfo = show => ({
     type: SHOW_INFO,
     show
 });

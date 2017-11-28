@@ -9,7 +9,6 @@ const initialState = {
 
 export const gameReducer = (state=initialState, action) => {
   if (action.type === actions.MAKE_GUESS) {
-
     let feedback
     const guess = parseInt(action.guess, 10);
 
@@ -25,17 +24,13 @@ export const gameReducer = (state=initialState, action) => {
 
     if (difference >= 50) {
       feedback = 'You\'re Ice Cold...';
-    }
-    else if (difference >= 30) {
+    } else if (difference >= 30) {
       feedback = 'You\'re Cold...';
-    }
-    else if (difference >= 10) {
+    } else if (difference >= 10) {
       feedback = 'You\'re Warm';
-    }
-    else if (difference >= 1) {
+    } else if (difference >= 1) {
       feedback = 'You\'re Hot!';
-    }
-    else {
+    } else {
       feedback = 'You got it!';
     }
 
@@ -47,7 +42,7 @@ export const gameReducer = (state=initialState, action) => {
 
   else if (action.type === actions.SHOW_INFO) {
     return Object.assign({}, state, {
-      showInfoModal: actions.show
+      showInfoModal: action.show
     });
   }
 
