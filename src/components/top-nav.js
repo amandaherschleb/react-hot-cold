@@ -1,39 +1,42 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import {newGame, showInfo} from '../actions';
 
 import './top-nav.css';
 
-export default class TopNav extends React.Component {
-    onNewGame(event) {
-        event.preventDefault();
-        if (this.props.onNewGame) {
-            this.props.onNewGame();
-        }
-    }
+export function TopNav(props) {
+  function onNewGame(e) {
+    e.preventDefault();
+    props.dispatch(newGame())
+  }
 
-    onInfo(event) {
-        event.preventDefault();
-        if (this.props.onInfo) {
-            this.props.onInfo();
-        }
-    }
+  function onInfo(e) {
+    e.preventDefault();
+    // toggle show boolean
+    let show = !props.showInfoModal;
+    props.dispatch(showInfo(show))
+  }
 
-    render() {
-        return (
-            <nav>
-                <ul className="clearfix">
-                    <li>
-                        <a className="what" href="#" onClick={e => this.onInfo(e)}>
-                            What?
-                        </a>
-                    </li>
-                    <li>
-                        <a className="new" href="#" onClick={e => this.onNewGame(e)}>
-                            + New Game
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        );
-    }
+  return (
+    <nav>
+      <ul className="clearfix">
+        <li>
+          <a className="what" href="#" onClick={onInfo}>
+              What?
+          </a>
+        </li>
+        <li>
+          <a className="new" href="#" onClick={onNewGame}>
+            + New Game
+          </a>
+        </li>
+      </ul>
+    </nav>
+  );
 };
 
+const mapStateToProps = state => ({
+  showInfoModal: state.showInfoModal
+});
+
+export default connect(mapStateToProps)(TopNav);

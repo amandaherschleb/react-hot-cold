@@ -9,13 +9,13 @@ export const makeGuess = guess => ({
     guess
 });
 
-export const SHOW_Info = 'SHOW_INFO';
+export const SHOW_INFO = 'SHOW_INFO';
 export const showInfo = (show) => ({
     type: SHOW_INFO,
     show
 });
 
 export const NEW_GAME = 'NEW_GAME';
-export const makeGuess = () => ({
+export const newGame = () => ({
     type: NEW_GAME
 });
