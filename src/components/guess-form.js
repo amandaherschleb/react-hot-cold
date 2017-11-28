@@ -13,7 +13,7 @@ export function GuessForm(props) {
       props.dispatch(makeGuess(value));
     }
 
-    target.value = '';
+    e.target.value = '';
   }
 
   return (
@@ -27,4 +27,4 @@ export function GuessForm(props) {
   );
 };
 
-export default connect()(GuessCount);
+export default connect()(GuessForm);
