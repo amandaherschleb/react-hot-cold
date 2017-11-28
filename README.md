@@ -1,4 +1,3 @@
-# React hot or cold solution
+# React hot or cold
 
-[GitHub](https://github.com/Thinkful-Ed/react-hot-cold)
-
+Thinkful project to learn how to use React and Redux
